@@ -69,7 +69,7 @@ Claude will:
 
 ```
 npm run crawl          Playwright crawl — no LLM
-npm run generate       LLM writes test cases + Playwright specs
+npm run generate       pure-code: groups pages, extracts cases, writes specs
 npm run run-tests      Runs generated specs, records observations
 npm run report         LLM analyses results, writes bug_report.md
 npm run fuzz           API/path fuzz with boundary inputs
@@ -96,8 +96,9 @@ All providers use `temperature: 0` for deterministic output.
 
 ```
 .claude/skills/act-as-frontend-test-agent/   Claude Code skill definition
-crawler/      Playwright-based site crawler
-generator/    LLM-powered test case + spec generator
+crawler/      Playwright-based site crawler (no LLM)
+generator/    Deterministic test case + spec generator (no LLM)
+  improver.js (LLM) Rewrites failing tests
 runner/       Runs generated specs, writes results
 fuzzer/       API + form fuzzer
 server/       Express API for the UI

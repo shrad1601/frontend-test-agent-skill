@@ -50,7 +50,6 @@ async function main() {
   }
 
   console.log(`\nFrontend Test Agent — Generator`);
-  console.log(`Provider: ${getProvider().toUpperCase()}`);
   console.log(`Mode: ${DRY_RUN ? "dry-run" : "live"}`);
   console.log(`Base URL: ${BASE_URL}`);
   console.log(`Raw data: ${RAW_DIR}\n`);

@@ -1,37 +1,34 @@
 // generator/cases.js
 import fs from "fs";
 import path from "path";
-import { llmCall } from "./llm.js";
-import { loadEnv } from "../crawler/loadEnv.js";
 
-loadEnv();
+// How many links per page we include (sites with huge navs can have 100+ identical links)
+const MAX_LINKS_PER_PAGE = 15;
 
-export async function generateTestCases(featureGroups, rawDir, dryRun = false) {
+/**
+ * Builds test case definitions purely from crawl data — no LLM needed.
+ * Every button, form, error, and API failure observed during crawl becomes a test case.
+ */
+export function generateTestCases(featureGroups, rawDir, dryRun = false) {
   const allCases = {};
+  const counters = {};
+
+  function nextId(prefix) {
+    counters[prefix] = (counters[prefix] || 0) + 1;
+    return `TC-${prefix}-${String(counters[prefix]).padStart(3, "0")}`;
+  }
 
   for (const group of featureGroups) {
-    console.log(`  Generating test cases for: ${group.feature}`);
-
-    const pages = gatherPageData(group.pages, rawDir);
-    const prompt = buildPrompt(group, pages);
-
     if (dryRun) {
-      console.log(`--- CASES PROMPT: ${group.feature} ---`);
-      console.log(prompt);
-      console.log(`--- END CASES PROMPT ---\n`);
+      console.log(`  [dry-run] Would generate cases for: ${group.feature}`);
       allCases[group.feature] = [];
       continue;
     }
 
-    try {
-      const text = await llmCall(prompt, { maxTokens: 3000 });
-      const cases = safeJsonParse(text);
-      if (!Array.isArray(cases)) throw new Error(`Unexpected response: ${text}`);
-      allCases[group.feature] = cases;
-    } catch (err) {
-      console.error(`  Failed for ${group.feature}: ${err.message}`);
-      allCases[group.feature] = [];
-    }
+    console.log(`  Generating test cases for: ${group.feature}`);
+    const pages = gatherPageData(group.pages, rawDir);
+    allCases[group.feature] = buildCasesForPages(pages, nextId);
+    console.log(`    → ${allCases[group.feature].length} case(s)`);
   }
 
   return allCases;
@@ -40,7 +37,6 @@ export async function generateTestCases(featureGroups, rawDir, dryRun = false) {
 function gatherPageData(urlPatterns, rawDir) {
   const files = fs.readdirSync(rawDir).filter((f) => f.endsWith(".json"));
   const pages = [];
-
   for (const file of files) {
     const raw = JSON.parse(fs.readFileSync(path.join(rawDir, file), "utf-8"));
     const matches = urlPatterns.some((pattern) => {
@@ -49,138 +45,179 @@ function gatherPageData(urlPatterns, rawDir) {
     });
     if (matches) pages.push(raw);
   }
-
   return pages;
 }
 
-// Caps how much per-page detail is shipped to the LLM. Sites with many
-// pages that repeat the same widget (e.g. an "Add to basket" form on every
-// product card) can otherwise balloon a single feature's prompt past the
-// model's context window once dozens of pages are grouped together.
-const MAX_LINKS_PER_PAGE = 15;
-
 function dedupeBySignature(items) {
   const seen = new Set();
-  const unique = [];
-  for (const item of items) {
+  return items.filter((item) => {
     const key = JSON.stringify(item);
-    if (!seen.has(key)) {
-      seen.add(key);
-      unique.push(item);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function buildCasesForPages(pages, nextId) {
+  const cases = [];
+
+  for (const page of pages) {
+    // 1. Navigation — always record what loads
+    cases.push({
+      id: nextId("NAV"),
+      description: `Load ${page.url} and record page state`,
+      type: "happy-path",
+      page: page.url,
+      action: "navigate and observe",
+      dataNeeded: "none",
+      observedSelector: null,
+      formFields: null,
+    });
+
+    // 2. Button click tests — one per unique observed button text
+    const buttonTexts = dedupeBySignature(
+      page.buttons.map((b) => b.text).filter(Boolean)
+    );
+    for (const text of buttonTexts) {
+      cases.push({
+        id: nextId("CLICK"),
+        description: `Click "${text}" on ${page.url}`,
+        type: "happy-path",
+        page: page.url,
+        action: `click button "${text}"`,
+        dataNeeded: "none",
+        observedSelector: text,
+        formFields: null,
+      });
+    }
+
+    // 3. Form tests — happy-path, validation, and two edge cases per unique form
+    const forms = dedupeBySignature(
+      page.forms.map((f) => ({
+        fields: f.fields
+          .filter((fld) => fld.name)
+          .map((fld) => ({
+            name: fld.name,
+            type: fld.type || "text",
+            required: !!fld.required,
+          })),
+        submitButton: f.submitButtonText || null,
+      }))
+    );
+
+    for (const form of forms) {
+      if (form.fields.length === 0) continue;
+
+      const fieldNames = form.fields.map((f) => f.name);
+      const dataDesc = fieldNames.join(", ");
+      const hasRequired = form.fields.some((f) => f.required);
+
+      // Happy path — fill every field with valid data and submit
+      cases.push({
+        id: nextId("FORM"),
+        description: `Submit form on ${page.url} with valid data`,
+        type: "happy-path",
+        page: page.url,
+        action: "fill all fields with valid data and submit",
+        dataNeeded: dataDesc,
+        observedSelector: form.submitButton,
+        formFields: fieldNames,
+      });
+
+      // Validation — leave required fields empty
+      if (hasRequired) {
+        cases.push({
+          id: nextId("FORM"),
+          description: `Submit form on ${page.url} with empty required fields`,
+          type: "validation",
+          page: page.url,
+          action: "leave all required fields empty and submit",
+          dataNeeded: "empty",
+          observedSelector: form.submitButton,
+          formFields: fieldNames,
+        });
+      }
+
+      // Edge case — boundary-length strings (256 chars)
+      cases.push({
+        id: nextId("FORM"),
+        description: `Submit form on ${page.url} with 256-char boundary inputs`,
+        type: "edge-case",
+        page: page.url,
+        action: "fill fields with 256-char strings and submit",
+        dataNeeded: "long strings",
+        observedSelector: form.submitButton,
+        formFields: fieldNames,
+      });
+
+      // Edge case — special characters (XSS / SQLi probe)
+      cases.push({
+        id: nextId("FORM"),
+        description: `Submit form on ${page.url} with special characters`,
+        type: "edge-case",
+        page: page.url,
+        action: "fill fields with special characters and submit",
+        dataNeeded: "special characters",
+        observedSelector: form.submitButton,
+        formFields: fieldNames,
+      });
+    }
+
+    // 4. Links — follow unique observed links, record destination
+    const links = dedupeBySignature(
+      (page.linksTo || [])
+        .filter((l) => l.target && l.trigger)
+        .map((l) => ({ text: l.trigger, target: l.target }))
+        .slice(0, MAX_LINKS_PER_PAGE)
+    );
+    for (const link of links) {
+      cases.push({
+        id: nextId("LINK"),
+        description: `Follow link "${link.text}" from ${page.url}`,
+        type: "happy-path",
+        page: page.url,
+        action: `click link "${link.text}" and record destination`,
+        dataNeeded: "none",
+        observedSelector: link.text,
+        formFields: null,
+        linkTarget: link.target,
+      });
+    }
+
+    // 5. Error reproduction — if errors were observed during crawl
+    const errors = page.errorsObserved || [];
+    if (errors.length > 0) {
+      cases.push({
+        id: nextId("ERR"),
+        description: `Observe ${errors.length} error(s) on ${page.url}`,
+        type: "error-scenario",
+        page: page.url,
+        action: "navigate and capture all console and network errors",
+        dataNeeded: "none",
+        observedSelector: null,
+        formFields: null,
+      });
+    }
+
+    // 6. API error tests — 4xx/5xx observed in network calls
+    const apiErrors = dedupeBySignature(
+      (page.networkCallsObserved || [])
+        .filter((c) => c.status >= 400)
+        .map((c) => ({ method: c.method, url: c.url, status: c.status }))
+    );
+    for (const call of apiErrors) {
+      cases.push({
+        id: nextId("API"),
+        description: `Observe ${call.status} from ${call.method} ${call.url}`,
+        type: "error-scenario",
+        page: page.url,
+        action: `navigate to trigger ${call.method} ${call.url} and record ${call.status} response`,
+        dataNeeded: "none",
+        observedSelector: null,
+        formFields: null,
+      });
     }
   }
-  return unique;
-}
 
-function buildPrompt(group, pages) {
-  // Build a clean inventory of ONLY what was actually observed
-  const pageInventory = pages.map((p) => {
-    const links = p.linksTo.map((l) => ({
-      text: l.trigger,
-      target: l.target
-    }));
-    const uniqueLinks = dedupeBySignature(links);
-    const truncatedLinkCount = uniqueLinks.length - MAX_LINKS_PER_PAGE;
-
-    return {
-      url: p.url,
-      title: p.title,
-      // Only real observed buttons with text (deduped — repeated identical
-      // buttons on one page, e.g. multiple "Add to basket" widgets, add no
-      // new information)
-      buttonsObserved: dedupeBySignature(p.buttons.map((b) => b.text).filter(Boolean)),
-      // Only real observed forms with actual field names (deduped by shape)
-      formsObserved: dedupeBySignature(
-        p.forms.map((f) => ({
-          fields: f.fields.map((field) => ({
-            name: field.name,
-            label: field.label,
-            type: field.type,
-            required: field.required
-          })),
-          submitButton: f.submitButtonText
-        }))
-      ),
-      // Only real observed links, deduped and capped per page
-      linksObserved: truncatedLinkCount > 0
-        ? [...uniqueLinks.slice(0, MAX_LINKS_PER_PAGE), `...and ${truncatedLinkCount} more link(s) observed`]
-        : uniqueLinks,
-      // Only real observed tables
-      tablesObserved: p.tables.map((t) => ({
-        columns: t.columns,
-        rowCount: t.rowCount
-      })),
-      // Real API calls observed
-      apiCallsObserved: p.networkCallsObserved.map((c) => ({
-        method: c.method,
-        url: c.url,
-        status: c.status
-      })),
-      // Real errors observed during crawl
-      errorsObserved: p.errorsObserved.map((e) => ({
-        type: e.type,
-        message: e.message.slice(0, 200)
-      }))
-    };
-  });
-
-  return `You are generating characterization test cases for the "${group.feature}" feature.
-
-## CRITICAL RULE — NO HALLUCINATION
-
-You must ONLY generate tests for things that were ACTUALLY OBSERVED during crawling.
-
-DO NOT invent:
-- Buttons that weren't observed (e.g. "Add to basket" if not in buttonsObserved)
-- Forms that weren't observed
-- API endpoints that weren't observed
-- UI states that weren't observed
-- Selectors that aren't in the crawl data
-
-If a button or form doesn't appear in the observed data, do NOT test it.
-
-## WHAT WAS ACTUALLY OBSERVED:
-${JSON.stringify(pageInventory, null, 2)}
-
-## TEST TYPES TO GENERATE (only from observed data):
-
-1. **Navigation tests** — visit each observed URL, record what loads (title, URL, errors)
-2. **Form tests** — only if forms were observed: submit with valid data, empty required fields
-3. **Button tests** — only if buttons were observed: click each observed button, record what happens
-4. **Error tests** — if errors were observed during crawl (console errors, 500s etc): reproduce and record
-5. **Link tests** — follow observed links, record where they go
-
-## OUTPUT FORMAT:
-Respond with ONLY a JSON array (no markdown fences) where each item has:
-- "id": e.g. "TC-CLIENT-001"
-- "description": one sentence describing what is being tested
-- "type": "happy-path" | "validation" | "edge-case" | "error-scenario"
-- "page": the URL this test runs on
-- "action": exactly what the test does
-- "dataNeeded": what input data is needed or "none"
-- "observedSelector": the actual CSS selector or button text from the crawl data that this test uses (or null if just navigating)
-  ## LIMIT: Generate a maximum of 10 test cases. Prioritize the most interesting/varied ones.`;
-}
-
-function safeJsonParse(text) {
-  if (!text) return null;
-  // Strip any kind of code fences
-  let cleaned = text
-    .trim()
-    .replace(/^```[\w]*\n?/i, "")
-    .replace(/\n?```$/i, "")
-    .trim();
-  
-  // Find the JSON array start
-  const arrayStart = cleaned.indexOf("[");
-  const arrayEnd = cleaned.lastIndexOf("]");
-  if (arrayStart !== -1 && arrayEnd !== -1) {
-    cleaned = cleaned.slice(arrayStart, arrayEnd + 1);
-  }
-
-  try {
-    return JSON.parse(cleaned);
-  } catch {
-    return null;
-  }
+  return cases;
 }

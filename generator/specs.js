@@ -1,50 +1,10 @@
 // generator/specs.js
-import { llmCall } from "./llm.js";
-import { loadEnv } from "../crawler/loadEnv.js";
-
-loadEnv();
 
 /**
- * Pulls the JS out of an LLM response, tolerating conversational preambles
- * ("Here's the spec file...") that some providers add before the code
- * fence — a plain start/end fence strip misses those and leaves prose in
- * the .spec.js file.
+ * Generates Playwright spec files from test case definitions using pure templates.
+ * No LLM involved — each test case type maps directly to a fixed code block.
  */
-function extractSpecCode(text) {
-  const fenced = text.match(/```(?:javascript|js)?\s*\n([\s\S]*?)```/i);
-  if (fenced) return fenced[1].trim();
-  return text.trim();
-}
-
-/**
- * Test titles and record() descriptions often quote an observed name
- * (e.g. "Add to basket", a book title). The LLM usually reaches for double
- * quotes since the surrounding string is single-quoted, but that's a style
- * choice, not a guarantee — an apostrophe left unescaped inside a
- * single-quoted test('...') title breaks the runner's regex-based test
- * extraction with a raw syntax error. Escape defensively rather than
- * relying on the model to always get this right.
- */
-function escapeInnerSingleQuotes(content) {
-  return content.replace(/\\'/g, "'").replace(/'/g, "\\'");
-}
-
-function sanitizeQuoting(spec) {
-  let fixed = spec.replace(
-    /test\('(.*?)',(\s*async\s*\(\s*\{\s*page\s*\}\s*\)\s*=>\s*\{)/g,
-    (_, title, rest) => `test('${escapeInnerSingleQuotes(title)}',${rest}`
-  );
-  fixed = fixed.replace(
-    /record\('([^']*)',\s*'(.*?)',(\s*observations\s*\);)/g,
-    (_, id, desc, rest) => `record('${id}', '${escapeInnerSingleQuotes(desc)}',${rest}`
-  );
-  return fixed;
-}
-
-/**
- * Generates Playwright spec files for each feature.
- */
-export async function generateSpecs(allCases, allData, rawDir, baseURL, dryRun = false) {
+export function generateSpecs(allCases, allData, _rawDir, baseURL, dryRun = false) {
   const allSpecs = {};
 
   for (const [feature, cases] of Object.entries(allCases)) {
@@ -55,127 +15,32 @@ export async function generateSpecs(allCases, allData, rawDir, baseURL, dryRun =
 
     console.log(`  Generating spec for: ${feature}`);
 
-    const casesWithData = cases.map((tc) => ({
-      ...tc,
-      testData: allData[tc.id] || null
-    }));
-
-    const prompt = buildPrompt(feature, casesWithData, baseURL);
-
     if (dryRun) {
-      console.log(`--- SPECS PROMPT: ${feature} ---`);
-      console.log(prompt);
-      console.log(`--- END SPECS PROMPT ---\n`);
-      allSpecs[feature] = "// dry-run - spec not generated";
+      console.log(`  [dry-run] Would generate spec for: ${feature}`);
+      allSpecs[feature] = "// dry-run — spec not generated";
       continue;
     }
 
-    try {
-      const text = await llmCall(prompt, { maxTokens: 4000 });
-      allSpecs[feature] = sanitizeQuoting(extractSpecCode(text));
-    } catch (err) {
-      console.error(`  Failed for ${feature}: ${err.message}`);
-      allSpecs[feature] = `// Generation failed: ${err.message}`;
-    }
+    const testBlocks = cases.map((tc) =>
+      generateTestBlock(tc, allData[tc.id], baseURL)
+    );
+    allSpecs[feature] = buildSpecFile(feature, testBlocks, baseURL);
   }
 
   return allSpecs;
 }
 
-function buildPrompt(feature, casesWithData, baseURL) {
-  // Detect if this is a hash-routing SPA by checking if any page URLs
-  // in the test cases look like hash routes
-  const isHashRouting = casesWithData.some(
-    (tc) => tc.page && tc.page.startsWith("/") && !tc.page.startsWith("//")
-  ) && !baseURL.includes("toscrape") && !baseURL.includes("github") && !baseURL.includes("wikipedia");
+// ─── Spec file wrapper ────────────────────────────────────────────────────────
 
-  const navPattern = isHashRouting
-    ? `await page.goto(\`\${BASE_URL}/#\${path}\`, { waitUntil: 'networkidle' });`
-    : `await page.goto(\`\${BASE_URL}\${path}\`, { waitUntil: 'networkidle' });`;
-
-  return `You are writing a Playwright characterization test spec for the "${feature}" feature.
-
-## BASE URL: ${baseURL}
-
-## CRITICAL RULES — READ CAREFULLY
-
-### This is CHARACTERIZATION testing:
-- Observe and RECORD current behavior
-- Do NOT assert correctness
-- Tests should NEVER throw or fail intentionally
-- Always wrap actions in try/catch and record what happened
-
-### ALLOWED Playwright APIs (use ONLY these):
-- page.goto(url, { waitUntil: 'networkidle' })
-- page.waitForLoadState('networkidle')
-- page.waitForTimeout(ms)
-- page.fill(selector, value)
-- page.click(selector)
-- page.locator(selector).count()
-- page.locator(selector).isVisible()
-- page.locator(selector).textContent()
-- page.locator(selector).inputValue()
-- page.url()
-- page.title()
-
-### STRICTLY FORBIDDEN (these cause crashes/hangs — never use):
-- page.waitForNetworkIdle() — does NOT exist
-- page.waitForResponse() — hangs forever
-- page.context().waitForEvent() — hangs forever
-- browserContext.waitForEvent() — hangs forever
-- expect() — no assertions in characterization tests
-- page.$eval() — use page.locator() instead
-
-### Navigation pattern:
-${isHashRouting
-  ? `This is a hash-routing SPA. Use: ${navPattern}`
-  : `This is a normal server-rendered website. Use: ${navPattern}
-NEVER add /#/ to URLs — this site does NOT use hash routing.`
-}
-
-### Console error capture (use EXACTLY this pattern at the top of every test):
-\`\`\`javascript
-const consoleErrors = [];
-page.on('console', msg => { if (msg.type() === 'error') consoleErrors.push(msg.text()); });
-page.on('pageerror', err => consoleErrors.push(err.message));
-\`\`\`
-### SELECTOR RULE:
-Each test case has an "observedSelector" field — use ONLY that selector for interactions.
-If observedSelector is null, the test should ONLY navigate and observe (no clicking).
-NEVER invent selectors. If you don't have an observedSelector, don't click anything.
-
-### Standard test structure (follow this EXACTLY):
-\`\`\`javascript
-test('TC-XXX-001: description', async ({ page }) => {
-  const consoleErrors = [];
-  page.on('console', msg => { if (msg.type() === 'error') consoleErrors.push(msg.text()); });
-  page.on('pageerror', err => consoleErrors.push(err.message));
-
-  const observations = {};
-  try {
-    await page.goto('${baseURL}/actual-path', { waitUntil: 'networkidle' });
-    await page.waitForTimeout(500);
-    observations.url = page.url();
-    observations.title = await page.title();
-    // record any other observations
-  } catch (err) {
-    observations.error = err.message;
-  }
-
-  observations.consoleErrors = consoleErrors;
-  record('TC-XXX-001', 'description', observations);
-});
-\`\`\`
-
-## TEST CASES WITH DATA:
-${JSON.stringify(casesWithData, null, 2)}
-
-Write the complete Playwright spec file now. Use this exact file structure:
+function buildSpecFile(feature, testBlocks, baseURL) {
+  return `// Auto-generated characterization test spec — ${feature}
+// Generated: ${new Date().toISOString()}
+// Re-run "npm run generate" to regenerate.
 
 import { test } from '@playwright/test';
 import fs from 'fs';
 
-const BASE_URL = '${baseURL}';
+const BASE_URL = ${JSON.stringify(baseURL)};
 const RESULTS = [];
 
 function record(id, description, observations) {
@@ -190,6 +55,183 @@ test.afterAll(() => {
   );
 });
 
-// One test() block per test case — follow the standard structure above exactly
-// Use FULL URLs like '${baseURL}/catalogue/...' — never add /#/ to non-SPA sites`;
+${testBlocks.join("\n\n")}
+`;
+}
+
+// ─── Per-test block generator ─────────────────────────────────────────────────
+
+function generateTestBlock(tc, testData, baseURL) {
+  const urlExpr = tc.page.startsWith("http")
+    ? JSON.stringify(tc.page)
+    : `BASE_URL + ${JSON.stringify(tc.page)}`;
+
+  const innerLines = buildInnerLines(tc, testData, urlExpr);
+
+  return `test(${JSON.stringify(`${tc.id}: ${tc.description}`)}, async ({ page }) => {
+  const consoleErrors = [];
+  const networkErrors = [];
+  page.on('console', msg => { if (msg.type() === 'error') consoleErrors.push(msg.text()); });
+  page.on('pageerror', err => consoleErrors.push(err.message));
+  page.on('response', res => { if (res.status() >= 400) networkErrors.push({ url: res.url(), status: res.status() }); });
+
+  const observations = {};
+  try {
+${innerLines}
+  } catch (err) {
+    observations.fatalError = err.message;
+  }
+
+  observations.consoleErrors = consoleErrors;
+  observations.networkErrors = networkErrors;
+  record(${JSON.stringify(tc.id)}, ${JSON.stringify(tc.description)}, observations);
+});`;
+}
+
+function buildInnerLines(tc, testData, urlExpr) {
+  const lines = [];
+
+  // Always navigate first
+  lines.push(`    await page.goto(${urlExpr}, { waitUntil: 'domcontentloaded' });`);
+  lines.push(`    await page.waitForTimeout(500);`);
+  lines.push(`    observations.url = page.url();`);
+  lines.push(`    observations.title = await page.title();`);
+
+  const action = (tc.action || "").toLowerCase();
+  const isFormTest = Array.isArray(tc.formFields) && tc.formFields.length > 0;
+  const isClickTest = action.includes("click button") && tc.observedSelector && !isFormTest;
+  const isLinkTest = action.includes("click link") && tc.observedSelector;
+
+  if (isFormTest) {
+    const fillMap = buildFillMap(tc, testData);
+    for (const [field, value] of Object.entries(fillMap)) {
+      const safeName = field.replace(/\W/g, "_");
+      lines.push(`    try {`);
+      lines.push(`      await page.locator('[name="${field}"], #${field}').first().fill(${JSON.stringify(value)}, { timeout: 3000 });`);
+      lines.push(`    } catch (e) { observations.fillError_${safeName} = e.message; }`);
+    }
+
+    // Submit
+    const submitSel = tc.observedSelector
+      ? `button, [type="submit"]`
+      : `[type="submit"]`;
+    const submitFilter = tc.observedSelector
+      ? `, { hasText: ${JSON.stringify(tc.observedSelector)} }`
+      : "";
+    lines.push(`    try {`);
+    lines.push(`      await page.locator(${JSON.stringify(submitSel)})${submitFilter ? `.filter(${submitFilter})` : ""}.or(page.locator('[type="submit"]')).first().click({ timeout: 3000 });`);
+    lines.push(`      await page.waitForTimeout(1000);`);
+    lines.push(`      observations.afterSubmitURL = page.url();`);
+    lines.push(`    } catch (e) { observations.submitError = e.message; }`);
+  } else if (isClickTest) {
+    const btnText = tc.observedSelector;
+    lines.push(`    try {`);
+    lines.push(`      await page.getByRole('button', { name: ${JSON.stringify(btnText)} }).or(page.locator('input[type="submit"]')).first().click({ timeout: 3000 });`);
+    lines.push(`      await page.waitForTimeout(500);`);
+    lines.push(`      observations.afterClickURL = page.url();`);
+    lines.push(`    } catch (e) { observations.clickError = e.message; }`);
+  } else if (isLinkTest) {
+    const linkText = tc.observedSelector;
+    lines.push(`    try {`);
+    lines.push(`      await page.getByRole('link', { name: ${JSON.stringify(linkText)} }).first().click({ timeout: 3000 });`);
+    lines.push(`      await page.waitForTimeout(500);`);
+    lines.push(`      observations.afterLinkURL = page.url();`);
+    lines.push(`    } catch (e) { observations.linkError = e.message; }`);
+  }
+
+  return lines.join("\n");
+}
+
+// ─── Fill map for form tests ──────────────────────────────────────────────────
+
+/**
+ * Builds a { fieldName: value } map for a form test case.
+ * - validation / empty  → "" for all fields
+ * - edge-case / long    → 256-char strings
+ * - edge-case / special → XSS / SQLi payloads
+ * - happy-path          → values from testData or inline fallbacks
+ */
+function buildFillMap(tc, testData) {
+  const fields = tc.formFields || [];
+  const map = {};
+
+  if (tc.type === "validation") {
+    for (const f of fields) map[f] = "";
+    return map;
+  }
+
+  if (tc.type === "edge-case") {
+    const isLong = tc.dataNeeded.includes("long");
+    const isSpecial = tc.dataNeeded.includes("special");
+    for (const f of fields) {
+      const fn = f.toLowerCase();
+      if (isLong) {
+        map[f] = isEmailField(fn)
+          ? "a".repeat(200) + "@test.co"
+          : "A".repeat(256);
+      } else if (isSpecial) {
+        map[f] = isEmailField(fn)
+          ? "test+<>\"'@example.com"
+          : "<script>alert('xss')</script> ' OR 1=1 --";
+      } else {
+        map[f] = "edge-case-value";
+      }
+    }
+    return map;
+  }
+
+  // happy-path: use testData first, then inline fallbacks
+  for (const f of fields) {
+    const fn = f.toLowerCase();
+
+    if (testData) {
+      // exact key match
+      if (testData[f] !== undefined) {
+        map[f] = String(testData[f]);
+        continue;
+      }
+      // semantic match
+      const match = Object.entries(testData).find(([k]) => {
+        const kl = k.toLowerCase();
+        return (
+          (isEmailField(fn) && kl.includes("email")) ||
+          (fn.includes("name") && kl.includes("name")) ||
+          (fn.includes("phone") && kl.includes("phone")) ||
+          (fn.includes("pass") && kl.includes("pass")) ||
+          (fn.includes("address") && kl.includes("address")) ||
+          (fn.includes("company") && kl.includes("company"))
+        );
+      });
+      if (match) {
+        map[f] = String(match[1]);
+        continue;
+      }
+    }
+
+    // inline fallbacks
+    map[f] = inlineFallback(fn);
+  }
+
+  return map;
+}
+
+function isEmailField(fieldNameLower) {
+  return fieldNameLower.includes("email") || fieldNameLower.includes("mail");
+}
+
+function inlineFallback(fn) {
+  if (isEmailField(fn)) return "test@example.com";
+  if (fn.includes("pass")) return "P@ssword1!";
+  if (fn.includes("first") && fn.includes("name")) return "Test";
+  if (fn.includes("last") && fn.includes("name")) return "User";
+  if (fn.includes("name")) return "Test User";
+  if (fn.includes("phone") || fn.includes("tel")) return "+1 555 0100";
+  if (fn.includes("address") || fn.includes("street")) return "123 Test Street";
+  if (fn.includes("city")) return "Testville";
+  if (fn.includes("zip") || fn.includes("postal")) return "12345";
+  if (fn.includes("country")) return "US";
+  if (fn.includes("company") || fn.includes("org")) return "Test Company";
+  if (fn.includes("message") || fn.includes("comment") || fn.includes("note")) return "Test message";
+  if (fn.includes("url") || fn.includes("website")) return "https://example.com";
+  return "test-value";
 }
