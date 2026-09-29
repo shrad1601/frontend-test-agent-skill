@@ -1,0 +1,50 @@
+{
+  "feature": "API Fuzz",
+  "data": {
+    "TC-FUZZ-001-A": {
+      "url": "/catalogue/a-light-in-the-attic_1000/index.html"
+    },
+    "TC-FUZZ-002-A": {
+      "url": "/catalogue/category/books_1/index.html"
+    },
+    "TC-FUZZ-003-A": {
+      "url": "/catalogue/category/books_1/index.html"
+    },
+    "TC-FUZZ-004-A": {
+      "url": "/catalogue/category/books/historical-fiction_4/index.html"
+    },
+    "TC-FUZZ-005-A": {
+      "url": "/catalogue/category/books/historical-fiction_4/index.html"
+    },
+    "TC-FUZZ-006-A": {
+      "url": "/catalogue/category/books/mystery_3/index.html"
+    },
+    "TC-FUZZ-007-A": {
+      "url": "/catalogue/category/books/mystery_3/index.html"
+    },
+    "TC-FUZZ-008-A": {
+      "url": "/catalogue/category/books/sequential-art_5/index.html"
+    },
+    "TC-FUZZ-009-A": {
+      "url": "/catalogue/category/books/sequential-art_5/index.html"
+    },
+    "TC-FUZZ-010-A": {
+      "url": "/catalogue/category/books/travel_2/index.html"
+    },
+    "TC-FUZZ-011-A": {
+      "url": "/catalogue/category/books/travel_2/index.html"
+    },
+    "TC-FUZZ-012-A": {
+      "url": "/index.html"
+    },
+    "TC-FUZZ-013-A": {
+      "url": "/index.html"
+    },
+    "TC-FUZZ-014-A": {
+      "url": "/"
+    },
+    "TC-FUZZ-015-A": {
+      "url": "/"
+    }
+  }
+}

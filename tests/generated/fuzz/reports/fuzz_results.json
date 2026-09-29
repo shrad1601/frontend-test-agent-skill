@@ -1,0 +1,257 @@
+[
+  {
+    "id": "TC-FUZZ-001-A",
+    "description": "GET /catalogue/a-light-in-the-attic_1000/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/a-light-in-the-attic_1000/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/a-light-in-the-attic_1000/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 1048,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:44.380Z"
+  },
+  {
+    "id": "TC-FUZZ-002-A",
+    "description": "GET /catalogue/category/books_1/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books_1/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books_1/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 261,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:44.648Z"
+  },
+  {
+    "id": "TC-FUZZ-003-A",
+    "description": "GET /catalogue/category/books_1/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books_1/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books_1/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 342,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:44.994Z"
+  },
+  {
+    "id": "TC-FUZZ-004-A",
+    "description": "GET /catalogue/category/books/historical-fiction_4/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books/historical-fiction_4/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books/historical-fiction_4/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 266,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:45.267Z"
+  },
+  {
+    "id": "TC-FUZZ-005-A",
+    "description": "GET /catalogue/category/books/historical-fiction_4/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books/historical-fiction_4/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books/historical-fiction_4/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 262,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:45.534Z"
+  },
+  {
+    "id": "TC-FUZZ-006-A",
+    "description": "GET /catalogue/category/books/mystery_3/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books/mystery_3/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books/mystery_3/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 265,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:45.805Z"
+  },
+  {
+    "id": "TC-FUZZ-007-A",
+    "description": "GET /catalogue/category/books/mystery_3/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books/mystery_3/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books/mystery_3/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 262,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:46.074Z"
+  },
+  {
+    "id": "TC-FUZZ-008-A",
+    "description": "GET /catalogue/category/books/sequential-art_5/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books/sequential-art_5/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books/sequential-art_5/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 275,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:46.353Z"
+  },
+  {
+    "id": "TC-FUZZ-009-A",
+    "description": "GET /catalogue/category/books/sequential-art_5/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books/sequential-art_5/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books/sequential-art_5/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 305,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:46.665Z"
+  },
+  {
+    "id": "TC-FUZZ-010-A",
+    "description": "GET /catalogue/category/books/travel_2/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books/travel_2/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books/travel_2/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 301,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:46.969Z"
+  },
+  {
+    "id": "TC-FUZZ-011-A",
+    "description": "GET /catalogue/category/books/travel_2/index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/catalogue/category/books/travel_2/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/catalogue/category/books/travel_2/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "\n\n<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html l",
+    "responseTime": 262,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:47.238Z"
+  },
+  {
+    "id": "TC-FUZZ-012-A",
+    "description": "GET /index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html lan",
+    "responseTime": 343,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:47.584Z"
+  },
+  {
+    "id": "TC-FUZZ-013-A",
+    "description": "GET /index.html with valid observed ID",
+    "method": "GET",
+    "endpoint": "/index.html",
+    "type": "happy-path",
+    "input": {
+      "url": "/index.html"
+    },
+    "statusCode": 200,
+    "responseBody": "<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html lan",
+    "responseTime": 307,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:47.895Z"
+  },
+  {
+    "id": "TC-FUZZ-014-A",
+    "description": "GET / with valid observed ID",
+    "method": "GET",
+    "endpoint": "/",
+    "type": "happy-path",
+    "input": {
+      "url": "/"
+    },
+    "statusCode": 200,
+    "responseBody": "<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html lan",
+    "responseTime": 262,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:48.161Z"
+  },
+  {
+    "id": "TC-FUZZ-015-A",
+    "description": "GET / with valid observed ID",
+    "method": "GET",
+    "endpoint": "/",
+    "type": "happy-path",
+    "input": {
+      "url": "/"
+    },
+    "statusCode": 200,
+    "responseBody": "<!DOCTYPE html>\n<!--[if lt IE 7]>      <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html lang=\"en-us\" class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html lang=\"en-us\" class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html lan",
+    "responseTime": 344,
+    "anomaly": false,
+    "anomalyType": null,
+    "error": null,
+    "timestamp": "2026-07-03T07:41:48.510Z"
+  }
+]

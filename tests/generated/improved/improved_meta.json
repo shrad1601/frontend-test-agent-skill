@@ -1,0 +1,23 @@
+[
+  {
+    "originalId": "TC-CLIENT-003",
+    "improvedId": "TC-IMP-001",
+    "source": "runner",
+    "errorCategory": "timeout",
+    "generatedAt": "2026-06-26T06:45:56.733Z"
+  },
+  {
+    "originalId": "TC-CLIENT-004",
+    "improvedId": "TC-IMP-002",
+    "source": "runner",
+    "errorCategory": "timeout",
+    "generatedAt": "2026-06-26T06:46:03.602Z"
+  },
+  {
+    "originalId": "TC-CLIENT-009",
+    "improvedId": "TC-IMP-003",
+    "source": "runner",
+    "errorCategory": "timeout",
+    "generatedAt": "2026-06-26T06:46:08.596Z"
+  }
+]

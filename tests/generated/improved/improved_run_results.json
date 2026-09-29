@@ -1,0 +1,72 @@
+[
+  {
+    "id": "TC-IMP-001",
+    "description": "Submit the waitlist form on the Self-hosted page with valid data",
+    "specFile": "improved.spec.js",
+    "status": "error",
+    "errorMessage": "Test timed out",
+    "consoleErrors": [],
+    "networkErrors": [],
+    "observations": [
+      {
+        "id": "TC-IMP-001",
+        "description": "Submit the waitlist form on the Self-hosted page with valid data",
+        "observations": {
+          "error": "page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"https://reqres.in/#/self-hosted\", waiting until \"domcontentloaded\"\u001b[22m\n",
+          "consoleErrors": []
+        }
+      }
+    ],
+    "screenshotPath": "tests\\generated\\reports\\screenshots\\TC-IMP-001.png",
+    "timestamp": "2026-06-26T06:57:15.756Z",
+    "retriedAndFailed": true
+  },
+  {
+    "id": "TC-IMP-002",
+    "description": "Submit the waitlist form without any input",
+    "specFile": "improved.spec.js",
+    "status": "passed",
+    "errorMessage": null,
+    "consoleErrors": [],
+    "networkErrors": [],
+    "observations": [
+      {
+        "id": "TC-IMP-002",
+        "description": "Submit the waitlist form without any input",
+        "observations": {
+          "fillError": "locator.fill: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#waitlistForm').locator('input[name=\"email\"]')\u001b[22m\n",
+          "clickError": "locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#waitlistForm button[type=\"submit\"]')\u001b[22m\n",
+          "finalUrl": "https://reqres.in/#/self-hosted",
+          "pageTitle": "ReqRes | Free REST API for developers | ReqRes",
+          "consoleErrors": []
+        }
+      }
+    ],
+    "screenshotPath": null,
+    "timestamp": "2026-06-26T06:57:32.192Z"
+  },
+  {
+    "id": "TC-IMP-003",
+    "description": "Verify the successful API call when submitting the waitlist form.",
+    "specFile": "improved.spec.js",
+    "status": "passed",
+    "errorMessage": null,
+    "consoleErrors": [],
+    "networkErrors": [],
+    "observations": [
+      {
+        "id": "TC-IMP-003",
+        "description": "Verify the successful API call when submitting the waitlist form.",
+        "observations": {
+          "fillError": "locator.fill: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"email\"]').first()\u001b[22m\n",
+          "clickError": "locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n",
+          "finalUrl": "https://reqres.in/#/about",
+          "pageTitle": "ReqRes | Free REST API for developers | ReqRes",
+          "consoleErrors": []
+        }
+      }
+    ],
+    "screenshotPath": null,
+    "timestamp": "2026-06-26T06:57:39.991Z"
+  }
+]

@@ -1,0 +1,543 @@
+{
+  "baseURL": "http://localhost:5173",
+  "crawlDate": "2026-06-12T06:03:23.911Z",
+  "dryRun": true,
+  "pages": [
+    {
+      "url": "/clients/14704",
+      "title": "Clients – React Spring CRUD | Spring React Demo",
+      "h1": null,
+      "linksTo": [
+        {
+          "target": "/clients/14705",
+          "trigger": "Edit"
+        },
+        {
+          "target": "/clients/14707",
+          "trigger": "Edit"
+        },
+        {
+          "target": "/clients/new",
+          "trigger": "+ Add Client"
+        }
+      ],
+      "forms": [],
+      "buttons": [
+        {
+          "text": "Delete",
+          "type": null,
+          "disabled": false
+        },
+        {
+          "text": "Delete",
+          "type": null,
+          "disabled": false
+        }
+      ],
+      "tables": [
+        {
+          "tableIndex": 0,
+          "columns": [
+            "Name",
+            "Email",
+            "Actions"
+          ],
+          "rowCount": 2,
+          "sampleRows": [
+            [
+              "First Example Client",
+              "first@example.com",
+              "EditDelete"
+            ],
+            [
+              "Second Example Client",
+              "second@example.com",
+              "EditDelete"
+            ]
+          ]
+        }
+      ],
+      "networkCallsObserved": [
+        {
+          "method": "GET",
+          "url": "/api/tenantInfo",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "tenantDisplay": "bfd566bf",
+            "clientCount": 2
+          }
+        },
+        {
+          "method": "GET",
+          "url": "/api/clients/14704",
+          "status": 500,
+          "requestBody": null,
+          "responseBody": {
+            "timestamp": "2026-06-12T06:02:53.824+00:00",
+            "status": 500,
+            "error": "Internal Server Error",
+            "path": "/api/clients/14704"
+          }
+        },
+        {
+          "method": "GET",
+          "url": "/api/clients",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": [
+            {
+              "id": 14705,
+              "name": "First Example Client",
+              "email": "first@example.com"
+            },
+            {
+              "id": 14707,
+              "name": "Second Example Client",
+              "email": "second@example.com"
+            }
+          ]
+        },
+        {
+          "method": "GET",
+          "url": "/api/tenantInfo",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "tenantDisplay": "bfd566bf",
+            "clientCount": 2
+          }
+        }
+      ],
+      "errorsObserved": [
+        {
+          "type": "console-error",
+          "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+          "context": "on page load: /clients/14704"
+        }
+      ],
+      "inferredPurpose": null,
+      "confidence": null,
+      "testingNotes": "[dry-run - not generated]"
+    },
+    {
+      "url": "/clients/14705",
+      "title": "Client: First Example Client | Spring React Demo",
+      "h1": null,
+      "linksTo": [],
+      "forms": [
+        {
+          "formIndex": 0,
+          "action": null,
+          "method": "GET",
+          "fields": [
+            {
+              "name": "id",
+              "label": "ID",
+              "type": "text",
+              "required": false,
+              "pattern": null,
+              "min": null,
+              "max": null,
+              "maxLength": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "type": "text",
+              "required": true,
+              "pattern": null,
+              "min": null,
+              "max": null,
+              "maxLength": null
+            },
+            {
+              "name": "email",
+              "label": "Email",
+              "type": "email",
+              "required": true,
+              "pattern": null,
+              "min": null,
+              "max": null,
+              "maxLength": null
+            }
+          ],
+          "submitButtonText": "Save"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "← Back",
+          "type": null,
+          "disabled": false
+        }
+      ],
+      "tables": [],
+      "networkCallsObserved": [
+        {
+          "method": "GET",
+          "url": "/api/tenantInfo",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "tenantDisplay": "bfd566bf",
+            "clientCount": 2
+          }
+        },
+        {
+          "method": "GET",
+          "url": "/api/clients/14705",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "id": 14705,
+            "name": "First Example Client",
+            "email": "first@example.com"
+          }
+        }
+      ],
+      "errorsObserved": [],
+      "inferredPurpose": null,
+      "confidence": null,
+      "testingNotes": "[dry-run - not generated]"
+    },
+    {
+      "url": "/clients/14706",
+      "title": "Clients – React Spring CRUD | Spring React Demo",
+      "h1": null,
+      "linksTo": [
+        {
+          "target": "/clients/14705",
+          "trigger": "Edit"
+        },
+        {
+          "target": "/clients/14707",
+          "trigger": "Edit"
+        },
+        {
+          "target": "/clients/new",
+          "trigger": "+ Add Client"
+        }
+      ],
+      "forms": [],
+      "buttons": [
+        {
+          "text": "Delete",
+          "type": null,
+          "disabled": false
+        },
+        {
+          "text": "Delete",
+          "type": null,
+          "disabled": false
+        }
+      ],
+      "tables": [
+        {
+          "tableIndex": 0,
+          "columns": [
+            "Name",
+            "Email",
+            "Actions"
+          ],
+          "rowCount": 2,
+          "sampleRows": [
+            [
+              "First Example Client",
+              "first@example.com",
+              "EditDelete"
+            ],
+            [
+              "Second Example Client",
+              "second@example.com",
+              "EditDelete"
+            ]
+          ]
+        }
+      ],
+      "networkCallsObserved": [
+        {
+          "method": "GET",
+          "url": "/api/tenantInfo",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "tenantDisplay": "bfd566bf",
+            "clientCount": 2
+          }
+        },
+        {
+          "method": "GET",
+          "url": "/api/clients/14706",
+          "status": 500,
+          "requestBody": null,
+          "responseBody": {
+            "timestamp": "2026-06-12T06:02:54.161+00:00",
+            "status": 500,
+            "error": "Internal Server Error",
+            "path": "/api/clients/14706"
+          }
+        },
+        {
+          "method": "GET",
+          "url": "/api/tenantInfo",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "tenantDisplay": "bfd566bf",
+            "clientCount": 2
+          }
+        },
+        {
+          "method": "GET",
+          "url": "/api/clients",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": [
+            {
+              "id": 14705,
+              "name": "First Example Client",
+              "email": "first@example.com"
+            },
+            {
+              "id": 14707,
+              "name": "Second Example Client",
+              "email": "second@example.com"
+            }
+          ]
+        }
+      ],
+      "errorsObserved": [
+        {
+          "type": "console-error",
+          "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+          "context": "on page load: /clients/14706"
+        }
+      ],
+      "inferredPurpose": null,
+      "confidence": null,
+      "testingNotes": "[dry-run - not generated]"
+    },
+    {
+      "url": "/clients/14707",
+      "title": "Client: Second Example Client | Spring React Demo",
+      "h1": null,
+      "linksTo": [],
+      "forms": [
+        {
+          "formIndex": 0,
+          "action": null,
+          "method": "GET",
+          "fields": [
+            {
+              "name": "id",
+              "label": "ID",
+              "type": "text",
+              "required": false,
+              "pattern": null,
+              "min": null,
+              "max": null,
+              "maxLength": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "type": "text",
+              "required": true,
+              "pattern": null,
+              "min": null,
+              "max": null,
+              "maxLength": null
+            },
+            {
+              "name": "email",
+              "label": "Email",
+              "type": "email",
+              "required": true,
+              "pattern": null,
+              "min": null,
+              "max": null,
+              "maxLength": null
+            }
+          ],
+          "submitButtonText": "Save"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "← Back",
+          "type": null,
+          "disabled": false
+        }
+      ],
+      "tables": [],
+      "networkCallsObserved": [
+        {
+          "method": "GET",
+          "url": "/api/clients/14707",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "id": 14707,
+            "name": "Second Example Client",
+            "email": "second@example.com"
+          }
+        }
+      ],
+      "errorsObserved": [],
+      "inferredPurpose": null,
+      "confidence": null,
+      "testingNotes": "[dry-run - not generated]"
+    },
+    {
+      "url": "/clients/new",
+      "title": "New Client | Spring React Demo",
+      "h1": null,
+      "linksTo": [],
+      "forms": [
+        {
+          "formIndex": 0,
+          "action": null,
+          "method": "GET",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Name *",
+              "type": "text",
+              "required": true,
+              "pattern": null,
+              "min": null,
+              "max": null,
+              "maxLength": null
+            },
+            {
+              "name": "email",
+              "label": "Email",
+              "type": "email",
+              "required": true,
+              "pattern": null,
+              "min": null,
+              "max": null,
+              "maxLength": null
+            }
+          ],
+          "submitButtonText": "Save"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "← Back",
+          "type": null,
+          "disabled": false
+        }
+      ],
+      "tables": [],
+      "networkCallsObserved": [
+        {
+          "method": "GET",
+          "url": "/api/tenantInfo",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "tenantDisplay": "bfd566bf",
+            "clientCount": 2
+          }
+        }
+      ],
+      "errorsObserved": [],
+      "inferredPurpose": null,
+      "confidence": null,
+      "testingNotes": "[dry-run - not generated]"
+    },
+    {
+      "url": "/",
+      "title": "Clients – React Spring CRUD | Spring React Demo",
+      "h1": null,
+      "linksTo": [
+        {
+          "target": "/clients/14704",
+          "trigger": "Edit"
+        },
+        {
+          "target": "/clients/14706",
+          "trigger": "Edit"
+        },
+        {
+          "target": "/clients/new",
+          "trigger": "+ Add Client"
+        }
+      ],
+      "forms": [],
+      "buttons": [
+        {
+          "text": "Delete",
+          "type": null,
+          "disabled": false
+        },
+        {
+          "text": "Delete",
+          "type": null,
+          "disabled": false
+        }
+      ],
+      "tables": [
+        {
+          "tableIndex": 0,
+          "columns": [
+            "Name",
+            "Email",
+            "Actions"
+          ],
+          "rowCount": 2,
+          "sampleRows": [
+            [
+              "First Example Client",
+              "first@example.com",
+              "EditDelete"
+            ],
+            [
+              "Second Example Client",
+              "second@example.com",
+              "EditDelete"
+            ]
+          ]
+        }
+      ],
+      "networkCallsObserved": [
+        {
+          "method": "GET",
+          "url": "/api/clients",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": [
+            {
+              "id": 14704,
+              "name": "First Example Client",
+              "email": "first@example.com"
+            },
+            {
+              "id": 14706,
+              "name": "Second Example Client",
+              "email": "second@example.com"
+            }
+          ]
+        },
+        {
+          "method": "GET",
+          "url": "/api/tenantInfo",
+          "status": 200,
+          "requestBody": null,
+          "responseBody": {
+            "tenantDisplay": "bfd566bf",
+            "clientCount": 2
+          }
+        }
+      ],
+      "errorsObserved": [],
+      "inferredPurpose": null,
+      "confidence": null,
+      "testingNotes": "[dry-run - not generated]"
+    }
+  ],
+  "workflows": []
+}

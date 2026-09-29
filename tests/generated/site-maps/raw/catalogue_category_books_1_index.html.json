@@ -1,0 +1,542 @@
+{
+  "url": "/catalogue/category/books_1/index.html",
+  "title": "Books | Books to Scrape - Sandbox",
+  "h1": "Books",
+  "linksTo": [
+    {
+      "target": "/index.html",
+      "trigger": "Books to Scrape"
+    },
+    {
+      "target": "/index.html",
+      "trigger": "Home"
+    },
+    {
+      "target": "/index.html",
+      "trigger": "Books"
+    },
+    {
+      "target": "/books/travel_2/index.html",
+      "trigger": "Travel"
+    },
+    {
+      "target": "/books/mystery_3/index.html",
+      "trigger": "Mystery"
+    },
+    {
+      "target": "/books/historical-fiction_4/index.html",
+      "trigger": "Historical Fiction"
+    },
+    {
+      "target": "/books/sequential-art_5/index.html",
+      "trigger": "Sequential Art"
+    },
+    {
+      "target": "/books/classics_6/index.html",
+      "trigger": "Classics"
+    },
+    {
+      "target": "/books/philosophy_7/index.html",
+      "trigger": "Philosophy"
+    },
+    {
+      "target": "/books/romance_8/index.html",
+      "trigger": "Romance"
+    },
+    {
+      "target": "/books/womens-fiction_9/index.html",
+      "trigger": "Womens Fiction"
+    },
+    {
+      "target": "/books/fiction_10/index.html",
+      "trigger": "Fiction"
+    },
+    {
+      "target": "/books/childrens_11/index.html",
+      "trigger": "Childrens"
+    },
+    {
+      "target": "/books/religion_12/index.html",
+      "trigger": "Religion"
+    },
+    {
+      "target": "/books/nonfiction_13/index.html",
+      "trigger": "Nonfiction"
+    },
+    {
+      "target": "/books/music_14/index.html",
+      "trigger": "Music"
+    },
+    {
+      "target": "/books/default_15/index.html",
+      "trigger": "Default"
+    },
+    {
+      "target": "/books/science-fiction_16/index.html",
+      "trigger": "Science Fiction"
+    },
+    {
+      "target": "/books/sports-and-games_17/index.html",
+      "trigger": "Sports and Games"
+    },
+    {
+      "target": "/books/add-a-comment_18/index.html",
+      "trigger": "Add a comment"
+    },
+    {
+      "target": "/books/fantasy_19/index.html",
+      "trigger": "Fantasy"
+    },
+    {
+      "target": "/books/new-adult_20/index.html",
+      "trigger": "New Adult"
+    },
+    {
+      "target": "/books/young-adult_21/index.html",
+      "trigger": "Young Adult"
+    },
+    {
+      "target": "/books/science_22/index.html",
+      "trigger": "Science"
+    },
+    {
+      "target": "/books/poetry_23/index.html",
+      "trigger": "Poetry"
+    },
+    {
+      "target": "/books/paranormal_24/index.html",
+      "trigger": "Paranormal"
+    },
+    {
+      "target": "/books/art_25/index.html",
+      "trigger": "Art"
+    },
+    {
+      "target": "/books/psychology_26/index.html",
+      "trigger": "Psychology"
+    },
+    {
+      "target": "/books/autobiography_27/index.html",
+      "trigger": "Autobiography"
+    },
+    {
+      "target": "/books/parenting_28/index.html",
+      "trigger": "Parenting"
+    },
+    {
+      "target": "/books/adult-fiction_29/index.html",
+      "trigger": "Adult Fiction"
+    },
+    {
+      "target": "/books/humor_30/index.html",
+      "trigger": "Humor"
+    },
+    {
+      "target": "/books/horror_31/index.html",
+      "trigger": "Horror"
+    },
+    {
+      "target": "/books/history_32/index.html",
+      "trigger": "History"
+    },
+    {
+      "target": "/books/food-and-drink_33/index.html",
+      "trigger": "Food and Drink"
+    },
+    {
+      "target": "/books/christian-fiction_34/index.html",
+      "trigger": "Christian Fiction"
+    },
+    {
+      "target": "/books/business_35/index.html",
+      "trigger": "Business"
+    },
+    {
+      "target": "/books/biography_36/index.html",
+      "trigger": "Biography"
+    },
+    {
+      "target": "/books/thriller_37/index.html",
+      "trigger": "Thriller"
+    },
+    {
+      "target": "/books/contemporary_38/index.html",
+      "trigger": "Contemporary"
+    },
+    {
+      "target": "/books/spirituality_39/index.html",
+      "trigger": "Spirituality"
+    },
+    {
+      "target": "/books/academic_40/index.html",
+      "trigger": "Academic"
+    },
+    {
+      "target": "/books/self-help_41/index.html",
+      "trigger": "Self Help"
+    },
+    {
+      "target": "/books/historical_42/index.html",
+      "trigger": "Historical"
+    },
+    {
+      "target": "/books/christian_43/index.html",
+      "trigger": "Christian"
+    },
+    {
+      "target": "/books/suspense_44/index.html",
+      "trigger": "Suspense"
+    },
+    {
+      "target": "/books/short-stories_45/index.html",
+      "trigger": "Short Stories"
+    },
+    {
+      "target": "/books/novels_46/index.html",
+      "trigger": "Novels"
+    },
+    {
+      "target": "/books/health_47/index.html",
+      "trigger": "Health"
+    },
+    {
+      "target": "/books/politics_48/index.html",
+      "trigger": "Politics"
+    },
+    {
+      "target": "/books/cultural_49/index.html",
+      "trigger": "Cultural"
+    },
+    {
+      "target": "/books/erotica_50/index.html",
+      "trigger": "Erotica"
+    },
+    {
+      "target": "/books/crime_51/index.html",
+      "trigger": "Crime"
+    },
+    {
+      "target": "/a-light-in-the-attic_1000/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/a-light-in-the-attic_1000/index.html",
+      "trigger": "A Light in the ..."
+    },
+    {
+      "target": "/tipping-the-velvet_999/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/tipping-the-velvet_999/index.html",
+      "trigger": "Tipping the Velvet"
+    },
+    {
+      "target": "/soumission_998/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/soumission_998/index.html",
+      "trigger": "Soumission"
+    },
+    {
+      "target": "/sharp-objects_997/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/sharp-objects_997/index.html",
+      "trigger": "Sharp Objects"
+    },
+    {
+      "target": "/sapiens-a-brief-history-of-humankind_996/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/sapiens-a-brief-history-of-humankind_996/index.html",
+      "trigger": "Sapiens: A Brief History ..."
+    },
+    {
+      "target": "/the-requiem-red_995/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-requiem-red_995/index.html",
+      "trigger": "The Requiem Red"
+    },
+    {
+      "target": "/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html",
+      "trigger": "The Dirty Little Secrets ..."
+    },
+    {
+      "target": "/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html",
+      "trigger": "The Coming Woman: A ..."
+    },
+    {
+      "target": "/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html",
+      "trigger": "The Boys in the ..."
+    },
+    {
+      "target": "/the-black-maria_991/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-black-maria_991/index.html",
+      "trigger": "The Black Maria"
+    },
+    {
+      "target": "/starving-hearts-triangular-trade-trilogy-1_990/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/starving-hearts-triangular-trade-trilogy-1_990/index.html",
+      "trigger": "Starving Hearts (Triangular Trade ..."
+    },
+    {
+      "target": "/shakespeares-sonnets_989/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/shakespeares-sonnets_989/index.html",
+      "trigger": "Shakespeare's Sonnets"
+    },
+    {
+      "target": "/set-me-free_988/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/set-me-free_988/index.html",
+      "trigger": "Set Me Free"
+    },
+    {
+      "target": "/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html",
+      "trigger": "Scott Pilgrim's Precious Little ..."
+    },
+    {
+      "target": "/rip-it-up-and-start-again_986/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/rip-it-up-and-start-again_986/index.html",
+      "trigger": "Rip it Up and ..."
+    },
+    {
+      "target": "/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html",
+      "trigger": "Our Band Could Be ..."
+    },
+    {
+      "target": "/olio_984/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/olio_984/index.html",
+      "trigger": "Olio"
+    },
+    {
+      "target": "/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html",
+      "trigger": "Mesaerion: The Best Science ..."
+    },
+    {
+      "target": "/libertarianism-for-beginners_982/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/libertarianism-for-beginners_982/index.html",
+      "trigger": "Libertarianism for Beginners"
+    },
+    {
+      "target": "/its-only-the-himalayas_981/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/its-only-the-himalayas_981/index.html",
+      "trigger": "It's Only the Himalayas"
+    },
+    {
+      "target": "/page-2.html",
+      "trigger": "next"
+    }
+  ],
+  "forms": [
+    {
+      "formIndex": 0,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": null
+    },
+    {
+      "formIndex": 1,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 2,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 3,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 4,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 5,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 6,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 7,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 8,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 9,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 10,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 11,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 12,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 13,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 14,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 15,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 16,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 17,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 18,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 19,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 20,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    }
+  ],
+  "buttons": [],
+  "tables": [],
+  "networkCallsObserved": [],
+  "errorsObserved": [
+    {
+      "type": "console-error",
+      "message": "Mixed Content: The page at 'https://books.toscrape.com/catalogue/category/books_1/index.html' was loaded over HTTPS, but requested an insecure script 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'. This request has been blocked; the content must be served over HTTPS.",
+      "context": "on page load: /catalogue/category/books_1/index.html"
+    }
+  ]
+}

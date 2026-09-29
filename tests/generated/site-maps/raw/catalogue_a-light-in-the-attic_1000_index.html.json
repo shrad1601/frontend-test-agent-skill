@@ -1,0 +1,60 @@
+{
+  "url": "/catalogue/a-light-in-the-attic_1000/index.html",
+  "title": "A Light in the Attic | Books to Scrape - Sandbox",
+  "h1": "A Light in the Attic",
+  "linksTo": [
+    {
+      "target": "/index.html",
+      "trigger": "Books to Scrape"
+    },
+    {
+      "target": "/index.html",
+      "trigger": "Home"
+    },
+    {
+      "target": "/category/books_1/index.html",
+      "trigger": "Books"
+    },
+    {
+      "target": "/category/books/poetry_23/index.html",
+      "trigger": "Poetry"
+    }
+  ],
+  "forms": [],
+  "buttons": [],
+  "tables": [
+    {
+      "tableIndex": 0,
+      "columns": [
+        "UPC",
+        "a897fe39b1053632"
+      ],
+      "rowCount": 7,
+      "sampleRows": [
+        [
+          "a897fe39b1053632"
+        ],
+        [
+          "Books"
+        ],
+        [
+          "£51.77"
+        ],
+        [
+          "£51.77"
+        ],
+        [
+          "£0.00"
+        ]
+      ]
+    }
+  ],
+  "networkCallsObserved": [],
+  "errorsObserved": [
+    {
+      "type": "console-error",
+      "message": "Mixed Content: The page at 'https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html' was loaded over HTTPS, but requested an insecure script 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'. This request has been blocked; the content must be served over HTTPS.",
+      "context": "on page load: /catalogue/a-light-in-the-attic_1000/index.html"
+    }
+  ]
+}

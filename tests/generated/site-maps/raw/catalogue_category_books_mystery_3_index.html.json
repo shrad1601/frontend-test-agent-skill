@@ -1,0 +1,546 @@
+{
+  "url": "/catalogue/category/books/mystery_3/index.html",
+  "title": "Mystery | Books to Scrape - Sandbox",
+  "h1": "Mystery",
+  "linksTo": [
+    {
+      "target": "/index.html",
+      "trigger": "Books to Scrape"
+    },
+    {
+      "target": "/index.html",
+      "trigger": "Home"
+    },
+    {
+      "target": "/books_1/index.html",
+      "trigger": "Books"
+    },
+    {
+      "target": "/books_1/index.html",
+      "trigger": "Books"
+    },
+    {
+      "target": "/travel_2/index.html",
+      "trigger": "Travel"
+    },
+    {
+      "target": "/index.html",
+      "trigger": "Mystery"
+    },
+    {
+      "target": "/historical-fiction_4/index.html",
+      "trigger": "Historical Fiction"
+    },
+    {
+      "target": "/sequential-art_5/index.html",
+      "trigger": "Sequential Art"
+    },
+    {
+      "target": "/classics_6/index.html",
+      "trigger": "Classics"
+    },
+    {
+      "target": "/philosophy_7/index.html",
+      "trigger": "Philosophy"
+    },
+    {
+      "target": "/romance_8/index.html",
+      "trigger": "Romance"
+    },
+    {
+      "target": "/womens-fiction_9/index.html",
+      "trigger": "Womens Fiction"
+    },
+    {
+      "target": "/fiction_10/index.html",
+      "trigger": "Fiction"
+    },
+    {
+      "target": "/childrens_11/index.html",
+      "trigger": "Childrens"
+    },
+    {
+      "target": "/religion_12/index.html",
+      "trigger": "Religion"
+    },
+    {
+      "target": "/nonfiction_13/index.html",
+      "trigger": "Nonfiction"
+    },
+    {
+      "target": "/music_14/index.html",
+      "trigger": "Music"
+    },
+    {
+      "target": "/default_15/index.html",
+      "trigger": "Default"
+    },
+    {
+      "target": "/science-fiction_16/index.html",
+      "trigger": "Science Fiction"
+    },
+    {
+      "target": "/sports-and-games_17/index.html",
+      "trigger": "Sports and Games"
+    },
+    {
+      "target": "/add-a-comment_18/index.html",
+      "trigger": "Add a comment"
+    },
+    {
+      "target": "/fantasy_19/index.html",
+      "trigger": "Fantasy"
+    },
+    {
+      "target": "/new-adult_20/index.html",
+      "trigger": "New Adult"
+    },
+    {
+      "target": "/young-adult_21/index.html",
+      "trigger": "Young Adult"
+    },
+    {
+      "target": "/science_22/index.html",
+      "trigger": "Science"
+    },
+    {
+      "target": "/poetry_23/index.html",
+      "trigger": "Poetry"
+    },
+    {
+      "target": "/paranormal_24/index.html",
+      "trigger": "Paranormal"
+    },
+    {
+      "target": "/art_25/index.html",
+      "trigger": "Art"
+    },
+    {
+      "target": "/psychology_26/index.html",
+      "trigger": "Psychology"
+    },
+    {
+      "target": "/autobiography_27/index.html",
+      "trigger": "Autobiography"
+    },
+    {
+      "target": "/parenting_28/index.html",
+      "trigger": "Parenting"
+    },
+    {
+      "target": "/adult-fiction_29/index.html",
+      "trigger": "Adult Fiction"
+    },
+    {
+      "target": "/humor_30/index.html",
+      "trigger": "Humor"
+    },
+    {
+      "target": "/horror_31/index.html",
+      "trigger": "Horror"
+    },
+    {
+      "target": "/history_32/index.html",
+      "trigger": "History"
+    },
+    {
+      "target": "/food-and-drink_33/index.html",
+      "trigger": "Food and Drink"
+    },
+    {
+      "target": "/christian-fiction_34/index.html",
+      "trigger": "Christian Fiction"
+    },
+    {
+      "target": "/business_35/index.html",
+      "trigger": "Business"
+    },
+    {
+      "target": "/biography_36/index.html",
+      "trigger": "Biography"
+    },
+    {
+      "target": "/thriller_37/index.html",
+      "trigger": "Thriller"
+    },
+    {
+      "target": "/contemporary_38/index.html",
+      "trigger": "Contemporary"
+    },
+    {
+      "target": "/spirituality_39/index.html",
+      "trigger": "Spirituality"
+    },
+    {
+      "target": "/academic_40/index.html",
+      "trigger": "Academic"
+    },
+    {
+      "target": "/self-help_41/index.html",
+      "trigger": "Self Help"
+    },
+    {
+      "target": "/historical_42/index.html",
+      "trigger": "Historical"
+    },
+    {
+      "target": "/christian_43/index.html",
+      "trigger": "Christian"
+    },
+    {
+      "target": "/suspense_44/index.html",
+      "trigger": "Suspense"
+    },
+    {
+      "target": "/short-stories_45/index.html",
+      "trigger": "Short Stories"
+    },
+    {
+      "target": "/novels_46/index.html",
+      "trigger": "Novels"
+    },
+    {
+      "target": "/health_47/index.html",
+      "trigger": "Health"
+    },
+    {
+      "target": "/politics_48/index.html",
+      "trigger": "Politics"
+    },
+    {
+      "target": "/cultural_49/index.html",
+      "trigger": "Cultural"
+    },
+    {
+      "target": "/erotica_50/index.html",
+      "trigger": "Erotica"
+    },
+    {
+      "target": "/crime_51/index.html",
+      "trigger": "Crime"
+    },
+    {
+      "target": "/sharp-objects_997/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/sharp-objects_997/index.html",
+      "trigger": "Sharp Objects"
+    },
+    {
+      "target": "/in-a-dark-dark-wood_963/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/in-a-dark-dark-wood_963/index.html",
+      "trigger": "In a Dark, Dark ..."
+    },
+    {
+      "target": "/the-past-never-ends_942/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-past-never-ends_942/index.html",
+      "trigger": "The Past Never Ends"
+    },
+    {
+      "target": "/a-murder-in-time_877/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/a-murder-in-time_877/index.html",
+      "trigger": "A Murder in Time"
+    },
+    {
+      "target": "/the-murder-of-roger-ackroyd-hercule-poirot-4_852/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-murder-of-roger-ackroyd-hercule-poirot-4_852/index.html",
+      "trigger": "The Murder of Roger ..."
+    },
+    {
+      "target": "/the-last-mile-amos-decker-2_754/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-last-mile-amos-decker-2_754/index.html",
+      "trigger": "The Last Mile (Amos ..."
+    },
+    {
+      "target": "/that-darkness-gardiner-and-renner-1_743/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/that-darkness-gardiner-and-renner-1_743/index.html",
+      "trigger": "That Darkness (Gardiner and ..."
+    },
+    {
+      "target": "/tastes-like-fear-di-marnie-rome-3_742/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/tastes-like-fear-di-marnie-rome-3_742/index.html",
+      "trigger": "Tastes Like Fear (DI ..."
+    },
+    {
+      "target": "/a-time-of-torment-charlie-parker-14_657/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/a-time-of-torment-charlie-parker-14_657/index.html",
+      "trigger": "A Time of Torment ..."
+    },
+    {
+      "target": "/a-study-in-scarlet-sherlock-holmes-1_656/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/a-study-in-scarlet-sherlock-holmes-1_656/index.html",
+      "trigger": "A Study in Scarlet ..."
+    },
+    {
+      "target": "/poisonous-max-revere-novels-3_627/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/poisonous-max-revere-novels-3_627/index.html",
+      "trigger": "Poisonous (Max Revere Novels ..."
+    },
+    {
+      "target": "/murder-at-the-42nd-street-library-raymond-ambler-1_624/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/murder-at-the-42nd-street-library-raymond-ambler-1_624/index.html",
+      "trigger": "Murder at the 42nd ..."
+    },
+    {
+      "target": "/most-wanted_623/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/most-wanted_623/index.html",
+      "trigger": "Most Wanted"
+    },
+    {
+      "target": "/hide-away-eve-duncan-20_620/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/hide-away-eve-duncan-20_620/index.html",
+      "trigger": "Hide Away (Eve Duncan ..."
+    },
+    {
+      "target": "/boar-island-anna-pigeon-19_613/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/boar-island-anna-pigeon-19_613/index.html",
+      "trigger": "Boar Island (Anna Pigeon ..."
+    },
+    {
+      "target": "/the-widow_609/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-widow_609/index.html",
+      "trigger": "The Widow"
+    },
+    {
+      "target": "/playing-with-fire_602/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/playing-with-fire_602/index.html",
+      "trigger": "Playing with Fire"
+    },
+    {
+      "target": "/what-happened-on-beale-street-secrets-of-the-south-mysteries-2_506/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/what-happened-on-beale-street-secrets-of-the-south-mysteries-2_506/index.html",
+      "trigger": "What Happened on Beale ..."
+    },
+    {
+      "target": "/the-bachelor-girls-guide-to-murder-herringford-and-watts-mysteries-1_491/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/the-bachelor-girls-guide-to-murder-herringford-and-watts-mysteries-1_491/index.html",
+      "trigger": "The Bachelor Girl's Guide ..."
+    },
+    {
+      "target": "/delivering-the-truth-quaker-midwife-mystery-1_464/index.html",
+      "trigger": "[unlabeled link]"
+    },
+    {
+      "target": "/delivering-the-truth-quaker-midwife-mystery-1_464/index.html",
+      "trigger": "Delivering the Truth (Quaker ..."
+    },
+    {
+      "target": "/page-2.html",
+      "trigger": "next"
+    }
+  ],
+  "forms": [
+    {
+      "formIndex": 0,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": null
+    },
+    {
+      "formIndex": 1,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 2,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 3,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 4,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 5,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 6,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 7,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 8,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 9,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 10,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 11,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 12,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 13,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 14,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 15,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 16,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 17,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 18,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 19,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    },
+    {
+      "formIndex": 20,
+      "action": null,
+      "method": "GET",
+      "fields": [],
+      "submitButtonText": "Add to basket"
+    }
+  ],
+  "buttons": [],
+  "tables": [],
+  "networkCallsObserved": [],
+  "errorsObserved": [
+    {
+      "type": "console-error",
+      "message": "Mixed Content: The page at 'https://books.toscrape.com/catalogue/category/books/mystery_3/index.html' was loaded over HTTPS, but requested an insecure script 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'. This request has been blocked; the content must be served over HTTPS.",
+      "context": "on page load: /catalogue/category/books/mystery_3/index.html"
+    }
+  ]
+}

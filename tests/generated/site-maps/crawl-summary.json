@@ -1,0 +1,63 @@
+{
+  "baseURL": "https://books.toscrape.com",
+  "crawlDate": "2026-07-03T07:17:48.634Z",
+  "authResult": {
+    "attempted": false,
+    "success": true,
+    "message": "No auth configured"
+  },
+  "isSPA": false,
+  "pagesVisited": 8,
+  "pages": [
+    {
+      "url": "/",
+      "title": "All products | Books to Scrape - Sandbox",
+      "depth": 0
+    },
+    {
+      "url": "/catalogue/a-light-in-the-attic_1000/index.html",
+      "title": "A Light in the Attic | Books to Scrape - Sandbox",
+      "depth": 0
+    },
+    {
+      "url": "/index.html",
+      "title": "All products | Books to Scrape - Sandbox",
+      "depth": 1
+    },
+    {
+      "url": "/catalogue/category/books_1/index.html",
+      "title": "Books | Books to Scrape - Sandbox",
+      "depth": 1
+    },
+    {
+      "url": "/catalogue/category/books/travel_2/index.html",
+      "title": "Travel | Books to Scrape - Sandbox",
+      "depth": 1
+    },
+    {
+      "url": "/catalogue/category/books/mystery_3/index.html",
+      "title": "Mystery | Books to Scrape - Sandbox",
+      "depth": 1
+    },
+    {
+      "url": "/catalogue/category/books/historical-fiction_4/index.html",
+      "title": "Historical Fiction | Books to Scrape - Sandbox",
+      "depth": 1
+    },
+    {
+      "url": "/catalogue/category/books/sequential-art_5/index.html",
+      "title": "Sequential Art | Books to Scrape - Sandbox",
+      "depth": 1
+    }
+  ],
+  "inferredRoutePatterns": [
+    "/",
+    "/catalogue/a-light-in-the-attic_1000/index.html",
+    "/index.html",
+    "/catalogue/category/books_1/index.html",
+    "/catalogue/category/books/travel_2/index.html",
+    "/catalogue/category/books/mystery_3/index.html",
+    "/catalogue/category/books/historical-fiction_4/index.html",
+    "/catalogue/category/books/sequential-art_5/index.html"
+  ]
+}

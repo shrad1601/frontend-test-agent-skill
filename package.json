@@ -1,0 +1,26 @@
+{
+  "name": "frontend-test-agent",
+  "version": "1.0.0",
+  "description": "Crawler agent for characterization testing",
+  "type": "module",
+  "scripts": {
+    "crawl": "node crawler/index.js",
+    "interpret": "node crawler/interpreter.js",
+    "interpret:dry": "node crawler/interpreter.js --dry-run",
+    "server": "node server/index.js",
+    "generate": "node generator/index.js",
+    "generate:dry": "node generator/index.js --dry-run",
+    "run-tests": "node runner/index.js",
+    "fuzz": "node fuzzer/index.js",
+    "fuzz-frontend": "node fuzzer/form-runner.js",
+    "report": "node -e \"import('./runner/reporter.js').then(m => m.generateReport())\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@faker-js/faker": "^8.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "json-schema-faker": "^0.6.2",
+    "playwright": "^1.45.0"
+  }
+}

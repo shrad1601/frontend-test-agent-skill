@@ -1,0 +1,95 @@
+{
+  "feature": "Book Catalogue",
+  "cases": [
+    {
+      "id": "TC-CLIENT-001",
+      "description": "Navigate to the 'A Light in the Attic' book page and verify the title and URL.",
+      "type": "happy-path",
+      "page": "/catalogue/a-light-in-the-attic_1000/index.html",
+      "action": "Visit the page",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-002",
+      "description": "Navigate to the Books category and verify the title and URL.",
+      "type": "happy-path",
+      "page": "/catalogue/category/books_1/index.html",
+      "action": "Visit the page",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-003",
+      "description": "Navigate to the Historical Fiction category and verify the title and URL.",
+      "type": "happy-path",
+      "page": "/catalogue/category/books/historical-fiction_4/index.html",
+      "action": "Visit the page",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-004",
+      "description": "Navigate to the Mystery category and verify the title and URL.",
+      "type": "happy-path",
+      "page": "/catalogue/category/books/mystery_3/index.html",
+      "action": "Visit the page",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-005",
+      "description": "Follow the link to the Travel category and verify the title and URL.",
+      "type": "happy-path",
+      "page": "/catalogue/category/books/travel_2/index.html",
+      "action": "Visit the page",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-006",
+      "description": "Navigate to the All products page and verify the title and URL.",
+      "type": "happy-path",
+      "page": "/index.html",
+      "action": "Visit the page",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-007",
+      "description": "Check for console errors on the 'A Light in the Attic' page.",
+      "type": "error-scenario",
+      "page": "/catalogue/a-light-in-the-attic_1000/index.html",
+      "action": "Visit the page and check console",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-008",
+      "description": "Check for console errors on the Books category page.",
+      "type": "error-scenario",
+      "page": "/catalogue/category/books_1/index.html",
+      "action": "Visit the page and check console",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-009",
+      "description": "Check for console errors on the Historical Fiction category page.",
+      "type": "error-scenario",
+      "page": "/catalogue/category/books/historical-fiction_4/index.html",
+      "action": "Visit the page and check console",
+      "dataNeeded": "none",
+      "observedSelector": null
+    },
+    {
+      "id": "TC-CLIENT-010",
+      "description": "Check for console errors on the Mystery category page.",
+      "type": "error-scenario",
+      "page": "/catalogue/category/books/mystery_3/index.html",
+      "action": "Visit the page and check console",
+      "dataNeeded": "none",
+      "observedSelector": null
+    }
+  ]
+}

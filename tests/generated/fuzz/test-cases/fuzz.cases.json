@@ -1,0 +1,125 @@
+{
+  "feature": "API Fuzz",
+  "cases": [
+    {
+      "id": "TC-FUZZ-001-A",
+      "description": "GET /catalogue/a-light-in-the-attic_1000/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/a-light-in-the-attic_1000/index.html",
+      "exampleURL": "/catalogue/a-light-in-the-attic_1000/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-002-A",
+      "description": "GET /catalogue/category/books_1/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books_1/index.html",
+      "exampleURL": "/catalogue/category/books_1/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-003-A",
+      "description": "GET /catalogue/category/books_1/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books_1/index.html",
+      "exampleURL": "/catalogue/category/books_1/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-004-A",
+      "description": "GET /catalogue/category/books/historical-fiction_4/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books/historical-fiction_4/index.html",
+      "exampleURL": "/catalogue/category/books/historical-fiction_4/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-005-A",
+      "description": "GET /catalogue/category/books/historical-fiction_4/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books/historical-fiction_4/index.html",
+      "exampleURL": "/catalogue/category/books/historical-fiction_4/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-006-A",
+      "description": "GET /catalogue/category/books/mystery_3/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books/mystery_3/index.html",
+      "exampleURL": "/catalogue/category/books/mystery_3/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-007-A",
+      "description": "GET /catalogue/category/books/mystery_3/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books/mystery_3/index.html",
+      "exampleURL": "/catalogue/category/books/mystery_3/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-008-A",
+      "description": "GET /catalogue/category/books/sequential-art_5/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books/sequential-art_5/index.html",
+      "exampleURL": "/catalogue/category/books/sequential-art_5/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-009-A",
+      "description": "GET /catalogue/category/books/sequential-art_5/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books/sequential-art_5/index.html",
+      "exampleURL": "/catalogue/category/books/sequential-art_5/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-010-A",
+      "description": "GET /catalogue/category/books/travel_2/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books/travel_2/index.html",
+      "exampleURL": "/catalogue/category/books/travel_2/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-011-A",
+      "description": "GET /catalogue/category/books/travel_2/index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/catalogue/category/books/travel_2/index.html",
+      "exampleURL": "/catalogue/category/books/travel_2/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-012-A",
+      "description": "GET /index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/index.html",
+      "exampleURL": "/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-013-A",
+      "description": "GET /index.html with valid observed ID",
+      "method": "GET",
+      "endpoint": "/index.html",
+      "exampleURL": "/index.html",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-014-A",
+      "description": "GET / with valid observed ID",
+      "method": "GET",
+      "endpoint": "/",
+      "exampleURL": "/",
+      "type": "happy-path"
+    },
+    {
+      "id": "TC-FUZZ-015-A",
+      "description": "GET / with valid observed ID",
+      "method": "GET",
+      "endpoint": "/",
+      "exampleURL": "/",
+      "type": "happy-path"
+    }
+  ]
+}

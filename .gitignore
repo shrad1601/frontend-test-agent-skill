@@ -1,0 +1,7 @@
+.env
+node_modules/
+ui/node_modules/
+.DS_Store
+.claude/settings.local.json
+tests/generated/reports/screenshots/
+tests/generated/fuzz/reports/screenshots/
