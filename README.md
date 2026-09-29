@@ -2,6 +2,8 @@
 
 The same [frontend-test-agent](https://github.com/shrad1601/frontend-test-agent) pipeline, plus a Claude Code skill that lets Claude drive the entire thing for you.
 
+![Frontend Test Agent UI](docs/screenshot-ui.png)
+
 ---
 
 ## What the skill adds
